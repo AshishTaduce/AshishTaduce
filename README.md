@@ -3,8 +3,8 @@
 My name is **Ashish Taduce**, a **Flutter** *Developer*, and also a **MERN** *Stack developer* based in the beautiful city of lakes *Bhopal*, *India*.  I have been developing web apps and mobile apps for almost a year now. My hobbies includes listening to podcasts and playing fast paced shooters. I am a patient person with the qualities of teamwork, a good listener, and loves to face challenges.
 
 List of skills I possesses is as following
- > | Dart | Flutter | \n
- | JavaScript | ReactJs | HTML | CSS | TypeScript | SaSS | \n
+ > | Dart | Flutter |
+ | JavaScript | ReactJs | HTML | CSS | TypeScript | SaSS |
  | ExpressJS | NodeJS | Firebase | FireStore | MongoDb |
  | REST API handling |
  
