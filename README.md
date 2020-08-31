@@ -1,5 +1,4 @@
-<a href="http://ashishtaduce.github.io/" rel="My Website">
-![alt text](https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/master/readme_header.png "Checkout My Website  😁")</a>
+<a href="http://ashishtaduce.github.io/" rel="My Website">![alt text](https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/master/readme_header.png "Checkout My Website  😁")</a>
 ---
 
 
