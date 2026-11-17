@@ -61,7 +61,7 @@ server-driven UI, analytics) is under NDA, so it lives off GitHub.
 ## Contributions
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/github-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/github-snake.svg">
-  <img alt="Contribution graph snake animation" src="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/github-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/pacman-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/pacman-light.svg">
+  <img alt="Contribution graph: Pac-Man eating my contributions" src="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/pacman-light.svg">
 </picture>
