@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" role="img" aria-label="Ashish Taduce — Flutter and web developer">
+  <style>
+    .bg { fill: #0d1117; }
+    .name { font: 700 44px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #f0f6fc; }
+    .line { font: 400 20px ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; fill: #7ee787; }
+    .cursor { fill: #7ee787; animation: blink 1s steps(1) infinite; }
+    .t1 { animation: show 12s infinite; opacity: 0; }
+    .t2 { animation: show 12s infinite 4s; opacity: 0; }
+    .t3 { animation: show 12s infinite 8s; opacity: 0; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes show { 0% { opacity: 0; } 4% { opacity: 1; } 30% { opacity: 1; } 34%, 100% { opacity: 0; } }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f6f8fa; } .name { fill: #1f2328; } .line, .cursor { fill: #1a7f37; }
+    }
+  </style>
+  <rect class="bg" width="900" height="180" rx="12"/>
+  <text class="name" x="48" y="82">Ashish Taduce</text>
+  <g transform="translate(48,128)">
+    <text class="line t1">&gt; offline-first Flutter apps</text>
+    <text class="line t2">&gt; React / Next.js frontends</text>
+    <text class="line t3">&gt; BLE hardware, bad networks, good UX</text>
+  </g>
+  <rect class="cursor" x="48" y="146" width="10" height="3"/>
+</svg>
