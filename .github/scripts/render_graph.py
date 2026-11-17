@@ -125,77 +125,6 @@ def snake(cells, th, lvl, seconds_per_cell=0.06, length=5):
     return "".join(parts)
 
 
-PACMAN = {"dark": {"pac": "#ffd33d", "ghosts": ["#ff4d4d", "#ff9de2", "#4de1ff", "#ffb347"], "pellet": "#ffe9a8", "dim": "#30363d"},
-          "light": {"pac": "#f2a900", "ghosts": ["#e5383b", "#e56fb4", "#1fa3c4", "#e8890c"], "pellet": "#c28a00", "dim": "#d0d7de"}}
-
-
-def pacman(cells, th, lvl, name="dark", seconds_per_cell=0.07, trailing=(14, 26, 38, 50)):
-    """Pac-Man eats the contribution pellets column by column while ghosts chase him."""
-    pc = PACMAN[name]
-    by_pos = {(c, r): (d, n) for c, r, d, n in cells}
-    path = []
-    for col in range(53):
-        rows = range(7) if col % 2 == 0 else range(6, -1, -1)
-        path += [(col, r) for r in rows if (col, r) in by_pos]
-    n = len(path)
-    total = n * seconds_per_cell
-    idx = {p: i for i, p in enumerate(path)}
-    w, h = PAD_L + 53 * STEP + 12, PAD_T + 7 * STEP + 14
-    half = CELL / 2
-    css = []
-    parts = [header(w, h, th), month_labels(cells, th)]
-    radius = {1: 1.8, 2: 2.6, 3: 3.4, 4: 4.2}
-    for (col, row), (day, c) in by_pos.items():
-        cx, cy = PAD_L + col * STEP + half, PAD_T + row * STEP + half
-        l = lvl(c)
-        if l == 0:
-            parts.append(f'<circle cx="{cx}" cy="{cy}" r="1" fill="{pc["dim"]}"/>')
-            continue
-        i = idx[(col, row)]
-        pct = i / n * 100
-        css.append(f"@keyframes p{i}{{0%,{pct:.2f}%{{opacity:1}}{pct + 0.01:.2f}%,100%{{opacity:0}}}}")
-        parts.append(f'<circle cx="{cx}" cy="{cy}" r="{radius[l]}" fill="{pc["pellet"]}" style="animation:p{i} {total:.2f}s linear infinite"/>')
-
-    # direction: down on even columns, right when changing column, up on odd columns
-    def angle(i):
-        if i + 1 >= n:
-            return 0
-        (c0, r0), (c1, r1) = path[i], path[i + 1]
-        return 0 if c1 > c0 else (90 if r1 > r0 else -90)
-
-    mv, gv = ["@keyframes pacrun{"], ["@keyframes ghostrun{"]
-    for i, (col, row) in enumerate(path):
-        x, y = PAD_L + col * STEP + half, PAD_T + row * STEP + half
-        mv.append(f"{i / n * 100:.3f}%{{transform:translate({x}px,{y}px) rotate({angle(i)}deg)}}")
-        gv.append(f"{i / n * 100:.3f}%{{transform:translate({x}px,{y}px)}}")
-    lx, ly = PAD_L + path[-1][0] * STEP + half, PAD_T + path[-1][1] * STEP + half
-    mv.append(f"100%{{transform:translate({lx}px,{ly}px) rotate(0deg)}}}}")
-    gv.append(f"100%{{transform:translate({lx}px,{ly}px)}}}}")
-    css += mv + gv
-    css.append(f".pac{{animation:pacrun {total:.2f}s linear infinite}}.gh{{animation:ghostrun {total:.2f}s linear infinite}}")
-
-    r = half + 1
-    # ghosts first so Pac-Man draws on top
-    gw = CELL + 2
-    ghost_body = (f"M{-gw / 2},{gw / 2} V{-1} A{gw / 2},{gw / 2} 0 0 1 {gw / 2},{-1} V{gw / 2} "
-                  f"L{gw / 6},{gw / 2 - 3} L{-gw / 6},{gw / 2} L{-gw / 2},{gw / 2 - 3} Z")
-    for k, back in enumerate(trailing):
-        colr = pc["ghosts"][k % len(pc["ghosts"])]
-        delay = (total - back * seconds_per_cell) % total
-        parts.append(
-            f'<g class="gh" style="animation-delay:-{delay:.2f}s"><path d="{ghost_body}" fill="{colr}"/>'
-            f'<circle cx="-2" cy="-2" r="1.8" fill="#fff"/><circle cx="2.4" cy="-2" r="1.8" fill="#fff"/>'
-            f'<circle cx="-1.4" cy="-2" r="0.9" fill="#1f2328"/><circle cx="3" cy="-2" r="0.9" fill="#1f2328"/></g>')
-    open_d = f"M0,0 L{r:.2f},{-r * 0.7:.2f} A{r:.2f},{r:.2f} 0 1 0 {r:.2f},{r * 0.7:.2f} Z"
-    shut_d = f"M0,0 L{r:.2f},{-r * 0.05:.2f} A{r:.2f},{r:.2f} 0 1 0 {r:.2f},{r * 0.05:.2f} Z"
-    parts.append(
-        f'<g class="pac"><path d="{open_d}" fill="{pc["pac"]}">'
-        f'<animate attributeName="d" dur="0.35s" repeatCount="indefinite" values="{open_d};{shut_d};{open_d}"/></path></g>')
-    parts.insert(1, "<style>" + "".join(css) + "</style>")
-    parts.append("</svg>")
-    return "".join(parts)
-
-
 def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
@@ -211,7 +140,7 @@ def main():
     lvl = level_fn([c for _, _, _, c in cells])
     os.makedirs(out_dir, exist_ok=True)
     for name, th in THEMES.items():
-        for kind, fn in (("heatmap", heatmap), ("snake", snake), ("pacman", lambda c, t, l: pacman(c, t, l, name))):
+        for kind, fn in (("heatmap", heatmap), ("snake", snake)):
             with open(os.path.join(out_dir, f"{kind}-{name}.svg"), "w", encoding="utf-8") as f:
                 f.write(fn(cells, th, lvl))
     print(f"total merged contributions: {sum(c for _, _, _, c in cells)}; wrote SVGs to {out_dir}")

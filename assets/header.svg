@@ -16,9 +16,9 @@
   <rect class="bg" width="900" height="180" rx="12"/>
   <text class="name" x="48" y="82">Ashish Taduce</text>
   <g transform="translate(48,128)">
-    <text class="line t1">&gt; offline-first Flutter apps</text>
-    <text class="line t2">&gt; React / Next.js frontends</text>
-    <text class="line t3">&gt; BLE hardware, bad networks, good UX</text>
+    <text class="line t1">&gt; Good at Flutter. Good at React. Allergic to Friday deploys.</text>
+    <text class="line t2">&gt; Took products from 0 to 1. Survived the 1 to 100.</text>
+    <text class="line t3">&gt; Startups, product teams, and one too many retros.</text>
   </g>
   <rect class="cursor" x="48" y="146" width="10" height="3"/>
 </svg>

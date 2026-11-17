@@ -8,18 +8,15 @@
   <a href="mailto:ashishtaduce2@gmail.com"><img src="https://img.shields.io/badge/Email-get%20in%20touch-ea4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 </p>
 
-Mobile and web developer from Bhopal, India. Civil engineer by training, now building
-offline-first Flutter apps and React/Next.js frontends — including apps that talk to
-Bluetooth hardware and keep working on a bad connection.
+Flutter and React developer from Bhopal, India. I've worked in product companies and
+startups, taking products from zero to shipped and then keeping them running.
 
 ## Stack
 
 **Mobile** &nbsp;
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white)
-![Bluetooth](https://img.shields.io/badge/BLE-0082FC?style=flat-square&logo=bluetooth&logoColor=white)
 ![GetX](https://img.shields.io/badge/GetX-8A2BE2?style=flat-square)
-![Offline sync](https://img.shields.io/badge/Offline%20sync-555?style=flat-square)
 
 **Web** &nbsp;
 ![React](https://img.shields.io/badge/React-20232a?style=flat-square&logo=react&logoColor=61DAFB)
@@ -55,13 +52,12 @@ Bluetooth hardware and keep working on a bad connection.
   </tr>
 </table>
 
-Client work (warehouse management with Bluetooth scales, a gamified consumer app,
-server-driven UI, analytics) is under NDA, so it lives off GitHub.
+Most of my employer and client work is under NDA, so it lives off GitHub.
 
 ## Contributions
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/pacman-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/pacman-light.svg">
-  <img alt="Contribution graph: Pac-Man eating my contributions" src="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/pacman-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/snake-light.svg">
+  <img alt="Contribution graph snake animation" src="https://raw.githubusercontent.com/AshishTaduce/AshishTaduce/output/snake-light.svg">
 </picture>
